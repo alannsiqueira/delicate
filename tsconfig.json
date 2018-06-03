@@ -21,6 +21,9 @@
       ],
       "@delicate/core": [
         "libs/core/src/index.ts"
+      ],
+      "@fuse": [
+        "@fuse/"
       ]
     }
   },

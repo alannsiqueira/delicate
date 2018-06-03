@@ -5,12 +5,14 @@
       true,
       "attribute",
       "delicate",
+      "fuse",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "delicate",
+      "fuse",
       "kebab-case"
     ]
   }
