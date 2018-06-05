@@ -4,7 +4,7 @@
 
     <!-- TOOLBAR: Above -->
     <ng-container *ngIf="fuseSettings.layout.toolbar === 'above'">
-      <fuse-toolbar [navigation]="navigation" class="above" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
+      <fuse-toolbar [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="above" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
     </ng-container>
     <!-- / TOOLBAR: Above -->
 
@@ -29,7 +29,7 @@
 
         <!-- TOOLBAR: Below -->
         <ng-container *ngIf="fuseSettings.layout.toolbar === 'below'">
-          <fuse-toolbar [navigation]="navigation" class="below" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
+          <fuse-toolbar [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="below" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
         </ng-container>
         <!-- / TOOLBAR: Below -->
 
@@ -47,7 +47,6 @@
       <fuse-sidebar [name]="'navbar'" [align]="'right'" [folded]="fuseSettings.layout.navigationFolded" [lockedOpen]="'gt-md'"
         class="right-navbar" [ngClass]="fuseSettings.colorClasses.navbar" *ngIf="fuseSettings.layout.navigation === 'right'">
         <fuse-navbar [navigation]="navigation" layout="vertical"></fuse-navbar>
-
       </fuse-sidebar>
       <!-- / NAVBAR: Right -->
 
@@ -69,4 +68,4 @@
 
 </mat-sidenav-container>
 
-<!-- <fuse-theme-options [navigation]="navigation"></fuse-theme-options> -->
+<fuse-theme-options [navigation]="navigation"></fuse-theme-options>

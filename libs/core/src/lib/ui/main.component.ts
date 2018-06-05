@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
 
 import { FuseConfigService } from '@fuse/services/config.service';
 
-
+export interface Language { id, flag, title };
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -36,6 +36,24 @@ export class UiMainComponent implements OnDestroy {
   public set navigation(navigation: any) {
     this._navigation = navigation;
   }
+
+
+  private _defaultLanguage: Language;
+  @Input()
+  public get defaultLanguage(): Language { return this._defaultLanguage; }
+  public set defaultLanguage(defaultLanguage: Language) {
+    this._defaultLanguage = defaultLanguage;
+  }
+
+
+  private _languages: Language[];
+  @Input()
+  public get languages(): Language[] { return this._languages; }
+  public set languages(languages: Language[]) {
+    this._languages = languages;
+  }
+
+
 
   constructor(
     private _renderer: Renderer2,

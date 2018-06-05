@@ -323,6 +323,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngx-translate/http-loader@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-3.0.1.tgz#20b0f98bc6c25321129d3e3302ab3cc489c0a42a"
+  dependencies:
+    tslib "^1.9.0"
+
 "@nrwl/nx@6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@nrwl/nx/-/nx-6.0.2.tgz#c1f85560d9733af068c86d41ade5f8d8c9db5b27"

@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,24 +12,20 @@ import { NxModule } from '@nrwl/nx';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
-import 'hammerjs';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    RouterModule.forRoot([]),
-
-    TranslateModule.forRoot(),
-    NxModule.forRoot(),
-
-    // Fuse Main and Shared modules
-    FuseModule.forRoot(fuseConfig),
-    DelicateCore,
-    FuseSharedModule,
-
+    BrowserModule
+    , FuseModule.forRoot(fuseConfig)
+    , FuseSharedModule
+    , BrowserAnimationsModule
+    , HttpClientModule
+    , TranslateModule.forRoot()
+    , NxModule.forRoot()
+    , DelicateCore
+    , RouterModule.forRoot([])
   ],
   bootstrap: [AppComponent]
 })

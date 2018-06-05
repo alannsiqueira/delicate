@@ -24,7 +24,8 @@
             "tsConfig": "apps/admin/tsconfig.app.json",
             "assets": [
               "apps/admin/src/favicon.ico",
-              "apps/admin/src/assets"
+              "apps/admin/src/assets/",
+              "apps/admin/src/assets/i18n"
             ],
             "styles": [
               "apps/admin/src/styles.scss"
@@ -33,12 +34,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/admin/src/environments/environment.ts",
-                  "with": "apps/admin/src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "apps/admin/src/environments/environment.ts",
+                "with": "apps/admin/src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -59,7 +58,15 @@
           "configurations": {
             "production": {
               "browserTarget": "admin:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.hmr.ts"
+              }]
             }
+
           }
         },
         "extract-i18n": {
@@ -81,7 +88,8 @@
             "scripts": [],
             "assets": [
               "apps/admin/src/favicon.ico",
-              "apps/admin/src/assets"
+              "apps/admin/src/assets/",
+              "apps/admin/src/assets/i18n"
             ]
           }
         },

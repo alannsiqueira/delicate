@@ -2,6 +2,7 @@ import { Component, InjectionToken, Inject, Input } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+import { Language } from './../main.component';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
@@ -13,12 +14,34 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 })
 export class FuseToolbarComponent {
   userStatusOptions: any[];
-  languages: any;
-  selectedLanguage: any;
   showLoadingBar: boolean;
   horizontalNav: boolean;
   noNav: boolean;
   quickPanelVisible: boolean
+
+
+  private _selectedLanguage: any = this.defaultLanguage;
+  @Input()
+  public get selectedLanguage(): any { return this._selectedLanguage ? this._selectedLanguage : this.defaultLanguage ; }
+  public set selectedLanguage(selectedLanguage: any) {
+    this._selectedLanguage = selectedLanguage;
+  }
+
+
+  private _defaultLanguage: Language;
+  @Input()
+  public get defaultLanguage(): Language { return this._defaultLanguage; }
+  public set defaultLanguage(defaultLanguage: Language) {
+    this._defaultLanguage = defaultLanguage;
+  }
+
+
+  private _languages: Language[];
+  @Input()
+  public get languages(): Language[] { return this._languages; }
+  public set languages(languages: Language[]) {
+    this._languages = languages;
+  }
 
 
   private _navigation: any;
@@ -63,20 +86,7 @@ export class FuseToolbarComponent {
       }
     ];
 
-    this.languages = [
-      {
-        id: 'en',
-        title: 'English',
-        flag: 'us'
-      },
-      {
-        id: 'pt',
-        title: 'Turkish',
-        flag: 'pt'
-      }
-    ];
-
-    this.selectedLanguage = this.languages[1];
+    this.languages = this.navigation;
 
     router.events.subscribe(event => {
       if (event instanceof NavigationStart) {

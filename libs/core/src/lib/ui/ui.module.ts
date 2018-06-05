@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material';
 
+import 'hammerjs';
+
 import { FuseSharedModule } from '@fuse/shared.module';
 import {
   FuseNavigationModule,
