@@ -45,7 +45,6 @@ export class UiMainComponent implements OnDestroy {
     this._defaultLanguage = defaultLanguage;
   }
 
-
   private _languages: Language[];
   @Input()
   public get languages(): Language[] { return this._languages; }
@@ -53,7 +52,10 @@ export class UiMainComponent implements OnDestroy {
     this._languages = languages;
   }
 
-
+  private _logo: string;
+  @Input()
+  public get logo(): string { return this._logo; }
+  public set logo(logo: string) { this._logo = logo; }
 
   constructor(
     private _renderer: Renderer2,

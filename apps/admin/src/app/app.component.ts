@@ -6,18 +6,18 @@ import { FuseSplashScreenService } from '@fuse/services/splash-screen.service';
 import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
 import { } from '@fuse/components/navigation/navigation.service';
 
-import { navigation, defaultLanguage, languages } from './../navigation';
+import { MENU, defaultLanguage, languages } from './app.menu';
 import { locale as navigationPortuguese } from '../assets/i18n/pt';
 import { locale as navigationEnglish } from '../assets/i18n/en';
 
 
 @Component({
   selector: 'fuse-root',
-  template: `<fuse-main [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation"></fuse-main>`
+  template: `<fuse-main [defaultLanguage]="defaultLanguage" [logo]="'assets/images/logos/fuse.svg'" [languages]="languages" [navigation]="navigation"></fuse-main>`
 })
 export class AppComponent {
 
-  public navigation = navigation;
+  public navigation = MENU;
   public languages = languages;
   public defaultLanguage = defaultLanguage;
 

@@ -4,14 +4,14 @@
 
     <!-- TOOLBAR: Above -->
     <ng-container *ngIf="fuseSettings.layout.toolbar === 'above'">
-      <fuse-toolbar [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="above" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
+      <fuse-toolbar [logo]="logo" [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="above"
+        [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
     </ng-container>
     <!-- / TOOLBAR: Above -->
 
     <!-- NAVBAR: Top -->
     <fuse-navbar layout="horizontal" [navigation]="navigation" class="top-navbar" fxHide fxShow.gt-md [ngClass]="fuseSettings.colorClasses.navbar"
       *ngIf="fuseSettings.layout.navigation === 'top'">
-
     </fuse-navbar>
     <!-- / NAVBAR: Top -->
 
@@ -29,7 +29,8 @@
 
         <!-- TOOLBAR: Below -->
         <ng-container *ngIf="fuseSettings.layout.toolbar === 'below'">
-          <fuse-toolbar [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="below" [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
+          <fuse-toolbar [logo]="logo" [defaultLanguage]="defaultLanguage" [languages]="languages" [navigation]="navigation" class="below"
+            [ngClass]="fuseSettings.colorClasses.toolbar"></fuse-toolbar>
         </ng-container>
         <!-- / TOOLBAR: Below -->
 

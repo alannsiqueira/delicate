@@ -34,10 +34,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "apps/admin/src/environments/environment.ts",
-                "with": "apps/admin/src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/src/environments/environment.ts",
+                  "with": "apps/admin/src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -61,12 +63,13 @@
             },
             "hmr": {
               "hmr": true,
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.hmr.ts"
-              }]
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
             }
-
           }
         },
         "extract-i18n": {
@@ -161,6 +164,34 @@
             "tsConfig": [
               "libs/core/tsconfig.lib.json",
               "libs/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "product": {
+      "root": "libs/product",
+      "sourceRoot": "libs/product/src",
+      "projectType": "library",
+      "prefix": "delicate",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/product/src/test.ts",
+            "tsConfig": "libs/product/tsconfig.spec.json",
+            "karmaConfig": "libs/product/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/product/tsconfig.lib.json",
+              "libs/product/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

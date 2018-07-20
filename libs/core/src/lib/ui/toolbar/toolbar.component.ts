@@ -13,43 +13,37 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class FuseToolbarComponent {
-  userStatusOptions: any[];
-  showLoadingBar: boolean;
-  horizontalNav: boolean;
-  noNav: boolean;
-  quickPanelVisible: boolean
+  public userStatusOptions: any[];
+  public showLoadingBar: boolean;
+  public horizontalNav: boolean;
+  public noNav: boolean;
+  public quickPanelVisible: boolean
 
 
   private _selectedLanguage: any = this.defaultLanguage;
   @Input()
-  public get selectedLanguage(): any { return this._selectedLanguage ? this._selectedLanguage : this.defaultLanguage ; }
-  public set selectedLanguage(selectedLanguage: any) {
-    this._selectedLanguage = selectedLanguage;
-  }
+  public get selectedLanguage(): any { return this._selectedLanguage ? this._selectedLanguage : this.defaultLanguage; }
+  public set selectedLanguage(selectedLanguage: any) { this._selectedLanguage = selectedLanguage; }
 
+  private _logo: string;
+  @Input()
+  public get logo(): string { return this._logo; }
+  public set logo(logo: string) { this._logo = logo; }
 
   private _defaultLanguage: Language;
   @Input()
   public get defaultLanguage(): Language { return this._defaultLanguage; }
-  public set defaultLanguage(defaultLanguage: Language) {
-    this._defaultLanguage = defaultLanguage;
-  }
-
+  public set defaultLanguage(defaultLanguage: Language) { this._defaultLanguage = defaultLanguage; }
 
   private _languages: Language[];
   @Input()
   public get languages(): Language[] { return this._languages; }
-  public set languages(languages: Language[]) {
-    this._languages = languages;
-  }
-
+  public set languages(languages: Language[]) { this._languages = languages; }
 
   private _navigation: any;
   @Input()
   public get navigation(): any { return this._navigation; }
-  public set navigation(navigation: any) {
-    this._navigation = navigation;
-  }
+  public set navigation(navigation: any) { this._navigation = navigation; }
 
 
   constructor(
