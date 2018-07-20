@@ -25,7 +25,10 @@ import { AppComponent } from './app.component';
     , TranslateModule.forRoot()
     , NxModule.forRoot()
     , DelicateCore
-    , RouterModule.forRoot([])
+    , RouterModule.forRoot(
+      [{ path: 'product', loadChildren: '@delicate/product#ProductModule' }]
+      , { useHash: true }
+    )
   ],
   bootstrap: [AppComponent]
 })

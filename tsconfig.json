@@ -24,6 +24,9 @@
       ],
       "@fuse": [
         "@fuse/"
+      ],
+      "@delicate/product": [
+        "libs/product/src/index.ts"
       ]
     }
   },

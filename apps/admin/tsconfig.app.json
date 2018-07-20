@@ -11,5 +11,7 @@
   ],
   "include": [
     "**/*.ts"
-  ]
+  
+    , "../../libs/product/src/index.ts"
+]
 }
